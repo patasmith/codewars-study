@@ -1,7 +1,7 @@
 /**
  * Detects whether a string contains all letters in an array regardless of case
  * @param {string} string - The string to operate on
- * @param {array} letter - The array of letters to detect
+ * @param {array} string - The array of letters to detect
  * @returns {boolean}
  */
 function containsEveryLetter(string, letters) {
