@@ -1,25 +1,25 @@
 const notRegex = require("../src/notRegex.js");
 
-describe("Detect every character", () => {
-  test("Return true when a string contains every character", () => {
+describe("Detect every letter", () => {
+  test("Return true when a string contains every letter", () => {
     let string = "Just a normal string.";
-    let characters = ["a", "i", "u"];
+    let letters = ["a", "I", "u", "j"];
     let expected = true;
-    let actual = notRegex.containsEveryCharacter(string, characters);
+    let actual = notRegex.containsEveryLetter(string, letters);
     expect(actual).toEqual(expected);
   });
-  test("Return false when a string contains only some characters", () => {
+  test("Return false when a string contains only some letters", () => {
     let string = "Just a normal string.";
-    let characters = ["y", "n", "x", "s"];
+    let letters = ["y", "n", "x", "s"];
     let expected = false;
-    let actual = notRegex.containsEveryCharacter(string, characters);
+    let actual = notRegex.containsEveryLetter(string, letters);
     expect(actual).toEqual(expected);
   });
-  test("Return false when a string contains no character", () => {
+  test("Return false when a string contains no letter", () => {
     let string = "Just a normal string.";
-    let characters = ["y", "z", "x", "p"];
+    let letters = ["y", "z", "x", "p"];
     let expected = false;
-    let actual = notRegex.containsEveryCharacter(string, characters);
+    let actual = notRegex.containsEveryLetter(string, letters);
     expect(actual).toEqual(expected);
   });
 })

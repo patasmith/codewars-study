@@ -1,19 +1,14 @@
 /**
- * Detects whether a string contains all characters in an array
+ * Detects whether a string contains all letters in an array regardless of case
  * @param {string} string - The string to operate on
- * @param {array} characters - The array of characters to detect
+ * @param {array} letter - The array of letters to detect
  * @returns {boolean}
  */
-function containsEveryCharacter(string, characters) {
+function containsEveryLetter(string, letters) {
   // There doesn't seem to be a regex that detects if every character in a range is present
-  for (let i = 0; i < characters.length; i++) {
-    if (!string.includes(characters[i])) {
-      return false;
-    }
-  }
-  return true;
+  return letters.every((letter) => string.toLowerCase().includes(letter.toLowerCase()));
 }
 
 module.exports = {
-  containsEveryCharacter,
+  containsEveryLetter,
 };
