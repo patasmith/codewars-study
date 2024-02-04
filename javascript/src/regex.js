@@ -37,7 +37,6 @@ function onlyLetters(string) {
   return string.replace(re, "");
 }
 
-
 module.exports = {
   eliminateLetter,
   eliminateLetters,
