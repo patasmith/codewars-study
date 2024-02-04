@@ -41,4 +41,10 @@ describe("Return only letters", () => {
     let actual = regex.onlyLetters(string);
     expect(actual).toEqual(expected);
   });
+  test("Return a string of only alphabetic characters unchanged", () => {
+    let string = "thisSTRINGisALPHABETIC";
+    let expected = string;
+    let actual = regex.onlyLetters(string);
+    expect(actual).toEqual(expected);
+  });
 });

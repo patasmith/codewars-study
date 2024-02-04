@@ -29,7 +29,11 @@ function eliminateLetters(string, ...characters) {
  * @returns {string}
  */
 function onlyLetters(string) {
-  let re = new RegExp();
+  // [abc] is a set; matches the included characters.
+  // [^abc] indicates a negated set; matches any character that is not included.
+  // [a-c] is an inclusive range; matches the two characters and any between them.
+  // + is a quantifier that matches 1 or more of the preceding token.
+  let re = new RegExp("[^a-z]+", 'gi');
   return string.replace(re, "");
 }
 
