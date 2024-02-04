@@ -23,7 +23,19 @@ function eliminateLetters(string, ...characters) {
   return string.replace(re, "");
 }
 
+/**
+ * Remove anything that isn't an alphabetic character from a string and return the result
+ * @param {string} string - The string to operate on
+ * @returns {string}
+ */
+function onlyLetters(string) {
+  let re = new RegExp();
+  return string.replace(re, "");
+}
+
+
 module.exports = {
   eliminateLetter,
   eliminateLetters,
+  onlyLetters,
 };

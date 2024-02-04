@@ -33,3 +33,12 @@ describe("Eliminate multiple letters", () => {
     expect(actual).toEqual(expected);
   });
 });
+
+describe("Return only letters", () => {
+  test("Return a string with all non-alphabetic letters removed", () => {
+    let string = "A (string) with 'spaces' and <brackets>.";
+    let expected = "Astringwithspacesandbrackets";
+    let actual = regex.onlyLetters(string);
+    expect(actual).toEqual(expected);
+  });
+});
