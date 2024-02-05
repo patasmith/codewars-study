@@ -63,3 +63,12 @@ describe("Return the unique letters of a string", () => {
     expect(actual).toEqual(expected);
   });
 });
+
+describe("Remove dashes and underscores from a string", () => {
+  test("Remove dashes and underscores", () => {
+    let string = "-no-d#shes-_!or%_under-scores_";
+    let expected = "nod#shes!or%underscores";
+    let actual = regex.removeDashesAndUnderscores(string);
+    expect(actual).toEqual(expected);
+  });
+});

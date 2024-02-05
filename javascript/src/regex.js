@@ -47,9 +47,15 @@ function letterSet(string) {
   return new Set(string.replace(re, "").toLowerCase().split(""));
 }
 
+function removeDashesAndUnderscores(string) {
+  return string.replace(/[_|\-]/g,"");
+}
+
 module.exports = {
   eliminateLetter,
   eliminateLetters,
   onlyLetters,
   letterSet,
+  removeDashesAndUnderscores,
 };
+
