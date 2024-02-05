@@ -33,18 +33,3 @@ describe("Return the alphabet as an array", () => {
     expect(actual).toEqual(expected);
   });
 });
-
-describe("Return the unique letters of a string", () => {
-  test("Return each unique letter in a string", () => {
-    let string = "AaaBbbCdExyZ";
-    let expected = new Set("abcdexyz".split(""));
-    let actual = notRegex.letterSet(string);
-    expect(actual).toEqual(expected);
-  });
-  test("Ignore spaces and punctuation", () => {
-    let string = " +%L@98 () 3ol-";
-    let expected = new Set(["l","o"]);
-    let actual = notRegex.letterSet(string);
-    expect(actual).toEqual(expected);
-  });
-});

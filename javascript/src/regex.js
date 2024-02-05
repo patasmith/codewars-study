@@ -33,12 +33,23 @@ function onlyLetters(string) {
   // [^abc] indicates a negated set; matches any character that is not included.
   // [a-c] is an inclusive range; matches the two characters and any between them.
   // + is a quantifier that matches 1 or more of the preceding token.
-  let re = new RegExp("[^a-z]+", 'gi');
+  let re = new RegExp("[^a-z]", 'gi');
   return string.replace(re, "");
+}
+
+/**
+ * Return a set containing each unique letter in a string (lowercase)
+ * @param {string} string - The string to operate on
+ * @returns {Set.<string>}
+ */
+function letterSet(string) {
+  let re = new RegExp("[^a-z]", "gi");
+  return new Set(string.replace(re, "").toLowerCase().split(""));
 }
 
 module.exports = {
   eliminateLetter,
   eliminateLetters,
   onlyLetters,
+  letterSet,
 };

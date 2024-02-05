@@ -19,18 +19,7 @@ function alphabetArray() {
   return baseArray.map(x => String.fromCharCode(x + base));
 }
 
-/**
- * Return a set containing each unique letter in a string (lowercase)
- * @param {string} string - The string to operate on
- * @returns {Set.<string>}
- */
-function letterSet(string) {
-  let re = new RegExp("[^a-z]+", "gi");
-  return new Set(string.replace(re, "").toLowerCase().split(""));
-}
-
 module.exports = {
   containsEveryLetter,
   alphabetArray,
-  letterSet,
 };
