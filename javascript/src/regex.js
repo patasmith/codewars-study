@@ -24,7 +24,8 @@ function eliminateLetters(string, ...characters) {
 }
 
 /**
- * Remove anything that isn't an alphabetic character from a string and return the result
+ * Remove anything that isn't an alphabetic character from a string
+ * and return the result
  * @param {string} string - The string to operate on
  * @returns {string}
  */
@@ -47,8 +48,30 @@ function letterSet(string) {
   return new Set(string.replace(re, "").toLowerCase().split(""));
 }
 
+/***
+ * Return a string with all dashes and underscores removed
+ * @param {string} string - The string to operate on
+ * @returns {string}
+ */
 function removeDashesAndUnderscores(string) {
   return string.replace(/[_|\-]/g,"");
+}
+
+/***
+ * Return a string with a specified letter doubled if single
+ * @param {string} string - The string to operate on
+ * @param {string} letter - The letter to double
+ * @returns {string}
+ */
+function doubleCharacterIfSingle(string, letter) {
+  let re = new RegExp("(?<!" + letter + ")"
+		      + letter +
+		      "(?!" + letter + ")", "gi");
+  return string.replace(re, (x) =>
+    x === x.toUpperCase()
+      ? x + x.toLowerCase()
+      : x + x
+  );
 }
 
 module.exports = {
@@ -57,5 +80,6 @@ module.exports = {
   onlyLetters,
   letterSet,
   removeDashesAndUnderscores,
+  doubleCharacterIfSingle,
 };
 

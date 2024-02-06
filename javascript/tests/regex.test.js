@@ -72,3 +72,12 @@ describe("Remove dashes and underscores from a string", () => {
     expect(actual).toEqual(expected);
   });
 });
+
+describe("Double a specific character in a string", () => {
+  test("Double a letter", () => {
+    let string = "Snakes use lessons and lesssons to see how to hiss and hisss";
+    let expected = "Ssnakess usse lessonss and lesssonss to ssee how to hiss and hisss";
+    let actual = regex.doubleCharacterIfSingle(string, "s");
+    expect(actual).toEqual(expected);
+  });
+});
