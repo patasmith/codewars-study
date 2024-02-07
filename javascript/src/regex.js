@@ -64,6 +64,18 @@ function removeDashesAndUnderscores(string) {
  * @returns {string}
  */
 function doubleCharacterIfSingle(string, letter) {
+  // (?<=...) is a lookbehind assertion.
+  // You use it to match whichever token follows it.
+  // It checks for the presence of ... (whatever that may be) before the token.
+  // (?<!...) is the negative version, which we use here.
+  
+  // (?=...) is a lookahead assertion.
+  // You use it to match whichever token precedes it.
+  // It checks for the presence of whatever you've placed in ... after the token.
+  // (?!...) is the negative version, which again we have used here.
+
+  // You can use them together to ensure specific conditions
+  // for the token between them. That's how we ensure the token is by itself.
   let re = new RegExp("(?<!" + letter + ")"
 		      + letter +
 		      "(?!" + letter + ")", "gi");
