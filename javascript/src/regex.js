@@ -54,7 +54,7 @@ function letterSet(string) {
  * @returns {string}
  */
 function removeDashesAndUnderscores(string) {
-  return string.replace(/[_|\-]/g,"");
+  return string.replace(/[_-]/g,"");
 }
 
 /***
