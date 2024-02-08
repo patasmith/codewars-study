@@ -19,7 +19,25 @@ function alphabetArray() {
   return baseArray.map(x => String.fromCharCode(x + base));
 }
 
+/**
+ * Given a number, return the next highest number that is a multiple of 3
+ * @param {number} n - The number to operate on
+ * @returns {number}
+ *
+ * @example
+ * // returns 6
+ * nextMultipleOfThree(3);
+ *
+ * @example
+ * // returns 12
+ * nextMultipleOfThree(10);
+ */
+function nextMultipleOfThree(n) {
+  return n + (3 - (n % 3))
+}
+
 module.exports = {
   containsEveryLetter,
   alphabetArray,
+  nextMultipleOfThree,
 };
