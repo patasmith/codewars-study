@@ -36,8 +36,27 @@ function nextMultipleOfThree(n) {
   return n + (3 - (n % 3))
 }
 
+/**
+ * Given a string, convert all words containing the letter 'e' to uppercase
+ * @param {string} string - The string to operate on
+ * @returns {string}
+ *
+ * @example
+ * // returns "EVEN an EASY SENTENCE to try"
+ * uppercaseWordsWithE("Even an easy sentence to try")
+ */
+function uppercaseWordsWithE(string) {
+  return string
+    .split(" ")
+    .map(x => x.includes("e") || x.includes("E")
+	 ? x.toUpperCase()
+	 : x)
+    .join(" ");
+}
+
 module.exports = {
   containsEveryLetter,
   alphabetArray,
   nextMultipleOfThree,
+  uppercaseWordsWithE,
 };

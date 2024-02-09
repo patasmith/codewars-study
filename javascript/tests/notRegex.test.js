@@ -51,3 +51,11 @@ describe("Return the next highest multiple of 3", () => {
     expect(actual).toEqual(expected);
   });
 });
+
+describe("Convert all words with letter 'e' in a sentence to uppercase", () => {
+  test("Convert words no matter their position or case of letter 'e'", () => {
+    let expected = "EVEN an EASY SENTENCE to try."
+    let actual = notRegex.uppercaseWordsWithE("Even an easy sentence to try.")
+    expect(actual).toEqual(expected);
+  })
+});
