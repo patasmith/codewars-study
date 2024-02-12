@@ -11,11 +11,16 @@ setup() {
     PATH="$DIR/../src:$PATH"
 }
 
+@test "Add two numbers" {
+    run math 2 2
+    assert_output "2 + 2 = 4"
+}
+
 @test "Show welcome message on first invocation" {
-    run project.sh
+    run project
     assert_output --partial 'Welcome to our project!'
 
-    run project.sh
+    run project
     refute_output --partial 'Welcome to our project!'
 }
 
