@@ -16,6 +16,14 @@ setup() {
     assert_output "2 + 2 = 4"
 }
 
+@test "Concatenate all arguments" {
+    run concatenate a b c
+    assert_output "abc"
+
+    run concatenate 1 3 5 9 this is a sentence
+    assert_output "1359thisisasentence"
+}
+
 @test "Show welcome message on first invocation" {
     run project
     assert_output --partial 'Welcome to our project!'
