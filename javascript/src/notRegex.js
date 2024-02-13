@@ -54,9 +54,34 @@ function uppercaseWordsWithE(string) {
     .join(" ");
 }
 
+/**
+ * Given a word, capitalize the middle character only (rounding down)
+ * @param {string} word - The word to operate on
+ * @returns {string}
+ *
+ * @example
+ * // returns "oDd"
+ * capitalizeMiddleCharacter("odd")
+ *
+ * @example
+ * // returns "eVen"
+ * capitalizeMiddleCharacter("EveN")
+ *
+ * @example
+ * //returns "Hi"
+ * capitalizeMiddleCharacter("Hi")
+ */
+function capitalizeMiddleCharacter(word) {
+  let middleIndex = word.length - parseInt(word.length / 2) - 1;
+  let beginning = word.slice(0, middleIndex).toLowerCase();
+  let end = word.slice(middleIndex + 1).toLowerCase();
+  return(beginning + word[middleIndex].toUpperCase() + end);
+}
+
 module.exports = {
   containsEveryLetter,
   alphabetArray,
   nextMultipleOfThree,
   uppercaseWordsWithE,
+  capitalizeMiddleCharacter,
 };
