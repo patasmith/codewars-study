@@ -78,10 +78,68 @@ function capitalizeMiddleCharacter(word) {
   return(beginning + word[middleIndex].toUpperCase() + end);
 }
 
+/**
+ * Given a string, randomly order the alphabetic characters,
+ * while maintaining original placement of capitalization
+ * and non-alphabetic characters
+ * @param {string} string - The string to scramble
+ * @returns {string}
+ */
+function scrambleAlpha(string) {
+  let chars = string.split("");
+
+  let indexedChars = chars.map((ch, index) => ({ch, index}));
+  
+  let nonAlpha = indexedChars.filter(({ ch }) =>
+    { code = ch.charCodeAt();
+      return !(code > 64 && code < 91) && !(code > 96 && code < 123);
+    });
+  
+  let alpha = indexedChars.filter(({ ch }) =>
+    { code = ch.charCodeAt();
+      return (code > 64 && code < 91) || (code > 96 && code < 123);
+    });
+  
+  let capsPlacement = alpha
+      .filter(({ ch }) => ch === ch.toUpperCase())
+      .map(({ ch, index }) => index);
+  
+  alpha = alpha.map(({ ch }) => ch.toLowerCase());
+  
+  for (let back = alpha.length - 1; back > 0; back--) {
+    let front = Math.floor(Math.random() * (back + 1));
+    [alpha[back], alpha[front]] = [alpha[front], alpha[back]];
+  };
+
+  nonAlpha.forEach(({ch, index}) => {
+    alpha.splice(index, 0, ch);
+  });
+  
+  capsPlacement.forEach( index => {
+    alpha[index] = alpha[index].toUpperCase();
+  });
+  
+  return alpha.join("");
+}
+
+/**
+ * Given a sentence, randomly order the alphabetic characters
+ * within each word, while maintaining original placement of
+ * capitalization and non-alphabetic characters
+ * @param {string} sentence - The sentence to scramble
+ * @returns {string}
+ */
+function scrambleWords(sentence) {
+  return sentence.split(" ").map(word => scrambleAlpha(word)).join(" ");
+}
+	       
+
 module.exports = {
   containsEveryLetter,
   alphabetArray,
   nextMultipleOfThree,
   uppercaseWordsWithE,
   capitalizeMiddleCharacter,
+  scrambleSentence,
+  scrambleWords
 };
