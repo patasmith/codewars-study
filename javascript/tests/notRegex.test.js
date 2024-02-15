@@ -77,3 +77,29 @@ describe("Capitalize the middle character of a word", () => {
     expect(actual).toEqual(expected);
   });
 });
+
+describe("Scramble alphabetic characters in string", () => {
+  test("Maintain original placement of capitalization and other characters", () => {
+    let string = notRegex.scrambleAlpha("Abcd, Efgh");
+    let equalities = [
+      [ string[4], "," ],
+      [ string[5], " " ],
+      [ string[0], string[0].toUpperCase() ],
+      [ string[3], string[3].toLowerCase() ],
+      [ string[6], string[6].toUpperCase() ],
+      [ string[9], string[9].toLowerCase() ],
+    ];
+    equalities.forEach( ([ actual, expected ]) => {
+      expect(actual).toEqual(expected);
+    });
+  });
+  test("Ensure presence of correct alphabetic characters in result", () => {
+    let string = "This is my test string.";
+    let scrambledString = notRegex.scrambleAlpha(string);
+
+    let testSort = (string) => {
+      return string.toLowerCase().split("").sort().join("");
+    }
+    expect(testSort(string)).toEqual(testSort(scrambledString));
+  });
+});

@@ -140,6 +140,6 @@ module.exports = {
   nextMultipleOfThree,
   uppercaseWordsWithE,
   capitalizeMiddleCharacter,
-  scrambleSentence,
+  scrambleAlpha,
   scrambleWords
 };
