@@ -96,10 +96,24 @@ describe("Scramble alphabetic characters in string", () => {
   test("Ensure presence of correct alphabetic characters in result", () => {
     let string = "This is my test string.";
     let scrambledString = notRegex.scrambleAlpha(string);
-
     let testSort = (string) => {
       return string.toLowerCase().split("").sort().join("");
     }
-    expect(testSort(string)).toEqual(testSort(scrambledString));
+    expect(testSort(scrambledString)).toEqual(testSort(string));
+  });
+});
+
+describe("Scramble alphabetic characters within words", () => {
+  test("Ensure presence of correct characters within each word", () => {
+    let sentence = "Words of many different lengths.";
+    let scrambledSentence = notRegex.scrambleWords(sentence);
+    let words = sentence.split(" ");
+    let scrambledWords = scrambledSentence.split(" ");
+    let testSort = (string) => {
+      return string.toLowerCase().split("").sort().join("");
+    }
+    words.forEach((word, index) => {
+      expect(testSort(scrambledWords[index])).toEqual(testSort(word));
+    });
   });
 });
