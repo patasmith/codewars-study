@@ -20,23 +20,6 @@ function alphabetArray() {
 }
 
 /**
- * Given a number, return the next highest number that is a multiple of 3
- * @param {number} n - The number to operate on
- * @returns {number}
- *
- * @example
- * // returns 6
- * nextMultipleOfThree(3);
- *
- * @example
- * // returns 12
- * nextMultipleOfThree(10);
- */
-function nextMultipleOfThree(n) {
-  return n + (3 - (n % 3))
-}
-
-/**
  * Given a string, convert all words containing the letter 'e' to uppercase
  * @param {string} string - The string to operate on
  * @returns {string}
@@ -137,7 +120,6 @@ function scrambleWords(sentence) {
 module.exports = {
   containsEveryLetter,
   alphabetArray,
-  nextMultipleOfThree,
   uppercaseWordsWithE,
   capitalizeMiddleCharacter,
   scrambleAlpha,
