@@ -17,3 +17,13 @@ describe("Return the next highest multiple of 3", () => {
     expect(actual).toEqual(expected);
   });
 });
+
+describe("Given two objects, find shared keys for values within a specified range", () => {
+  test("No shared keys", () => {
+    let expected = [];
+    let o1 = {'a': 100, 'b': 200}
+    let o2 = {'c': 300, 'd': 400}
+    let actual = numbers.compareValuesWithinRange(o1, o2, 100);
+    expect(actual).toEqual(expected);
+  });
+});

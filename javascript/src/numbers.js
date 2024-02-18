@@ -19,7 +19,7 @@ function nextMultipleOfThree(n) {
  * Given two objects containing numeric values, return identical keys that
  * contain values within a specified range
  * @param {Object.<number>} o1 - The first collection of numeric values to compare
- * @param {Object} o2 - The second collection of numeric values to compare
+ * @param {Object.<number>} o2 - The second collection of numeric values to compare
  * @param {number} range - Indicates how far above/below to compare values
  * @returns {Array.<string>}
  *
@@ -30,9 +30,10 @@ function nextMultipleOfThree(n) {
  *                          50)
  */
 function compareValuesWithinRange(o1, o2, range) {
-  return {};
+  return [];
 }
 
 module.exports = {
   nextMultipleOfThree,
+  compareValuesWithinRange
 };
