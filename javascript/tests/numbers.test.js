@@ -32,5 +32,12 @@ describe("Given two objects, find shared keys for values within a specified rang
     let o2 = {'a': 3, 'b': 4};
     let actual = numbers.compareValuesWithinRange(o1, o2, 1);
     expect(actual).toEqual(expected);
-  })
+  });
+  test("Shared keys", () => {
+    let expected = ['a', 'c'];
+    let o1 = {'a': 50, 'b': 100, 'c': 25};
+    let o2 = {'a': 75, 'b': 200, 'c': 50};
+    let actual = numbers.compareValuesWithinRange(o1, o2, 25);
+    expect(actual).toEqual(expected);
+  });
 });
