@@ -1,2 +1,2 @@
 def only_one(arr):
-    return []
+    return list(set(arr))
