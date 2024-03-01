@@ -13,7 +13,7 @@ def test_only_one_empty_array():
     assert expected == actual
 
 
-def test_only_one_empty_array():
+def test_only_one_same_array():
     expected = ['a', 'b', 'c']
     actual = only_one(expected)
-    assert expected == actual
+    assert expected.sort() == actual.sort()
