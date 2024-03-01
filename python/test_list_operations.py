@@ -1,4 +1,4 @@
-from list_operations import only_one
+from list_operations import only_one, power_of_three
 
 
 def test_only_one_standard_array():
@@ -17,3 +17,9 @@ def test_only_one_same_array():
     expected = ['a', 'b', 'c']
     actual = only_one(expected)
     assert expected.sort() == actual.sort()
+
+
+def test_power_of_three():
+    expected = [1, 8, 27, 64]
+    actual = power_of_three([1, 2, 3, 4])
+    assert expected == actual
