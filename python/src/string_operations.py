@@ -8,3 +8,7 @@ def fun_mask(string, pattern="#"):
         for i in range(length_to_mask):
             result += pattern[i % len(pattern)]
         return result + string[-4:]
+
+
+def is_roman(string):
+    return False
