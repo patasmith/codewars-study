@@ -28,7 +28,7 @@ def test_fun_mask_huge_pattern():
 def test_is_roman_false():
     assert not is_roman("xyz")
     assert not is_roman("LaMe")
-    assert not is_roman(123)
+    assert not is_roman("123")
     assert not is_roman("five")
     assert not is_roman("")
     assert not is_roman(" ")

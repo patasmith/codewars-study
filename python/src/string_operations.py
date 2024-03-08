@@ -13,7 +13,7 @@ def fun_mask(string: str, pattern: str = "#") -> str:
             result += pattern[i % len(pattern)]
         return result + string[-4:]
 
-
+    
 def is_roman(string: str) -> bool:
     """Roman numeral validator.
     See https://www.thevbprogrammer.com/Ch08/08-10-RomanNumerals.htm for rules.
@@ -23,11 +23,11 @@ def is_roman(string: str) -> bool:
         """A roman numeral."""
 
         def __init__(
-            self,
-            letter: str,
-            value: int,
-            appear_once: bool,
-            subtractor: bool,
+                self,
+                letter: str,
+                value: int,
+                appear_once: bool,
+                subtractor: bool,
         ):
             self.letter = letter
             self.value = value
@@ -44,4 +44,6 @@ def is_roman(string: str) -> bool:
         Numeral("I", 1, False, True),
     ]
 
-    return False
+    letters = [numeral.letter for numeral in numerals]
+    
+    return string and all(letter in letters for letter in string)
